@@ -1,0 +1,95 @@
+.container {
+	margin: 0 auto;
+	margin-top: 80px;
+}
+.frm {
+	display: flex;
+	justify-content: center;
+}
+.titleCl {
+	background-color: #f2cf43;
+	background-image: linear-gradient(315deg, #f2cf43 0%, #19a186 74%);
+	width: 250px;
+	height: 45px;
+	border: 1px solid #19a186;
+	color: #f2cf43;
+}
+.titleCl::placeholder {
+	padding-left: 10px;
+	color: #f2cf43;
+}
+.dateCl {
+	background-image: linear-gradient(315deg, #f2cf43 0%, #19a186 74%);
+	height: 47px;
+	border: 1px solid #19a186;
+	margin-left: 2px;
+	color: #f2cf43;
+}
+.dateCl text {
+    font-family: inherit;
+    font-weight: 500;
+	padding-left: 10px;
+}
+/* From cssbuttons.io by @adamgiebl */
+.button {
+    margin-left: 5px;
+    border: none;
+    display: block;
+    position: relative;
+    padding: 0.7em 2.4em;
+    font-size: 18px;
+    background: transparent;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    color: #f2cf43;
+    z-index: 1;
+    font-family: inherit;
+    font-weight: 500;
+   }
+   
+   .button span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    border: 4px solid #f2cf43;
+   }
+   
+   .button span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 8%;
+    height: 500%;
+    background: var(--lightgray);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-60deg);
+    transition: all 0.3s;
+   }
+   
+   .button:hover span::before {
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 100%;
+    background: #f2cf43;
+   }
+   
+   .button:hover {
+    color: white;
+   }
+   
+   .button:active span::before {
+    background: #f2cf43;
+   }
+
+img{
+    width: 40px;
+    border-radius: 100px;
+}
+.todo{
+    color: #f2cf07;
+}

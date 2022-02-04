@@ -1,0 +1,32 @@
+.checkbox{
+    text-decoration: line-through;
+    color: #494946;
+}
+.map{
+    display: flex;
+    justify-content: center;
+}
+.addlist{
+    background-image: linear-gradient(315deg, #f2cf43 0%, #19a186 74%);
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    width: 525px;
+    height: 40px;
+    margin-top: 10px;
+    padding-top: 15px;
+}
+.delete{
+    background-image: linear-gradient(315deg, #f30606 0%, #a11919 74%);
+    border: none;
+    width: 60px;
+    height: 30px;
+    color:#f2cf43 ;
+    border-radius: 5px;
+    margin-left: 40px;
+    margin-right: 10px;
+}
+.span{
+    color:#f2cf43 ;
+    padding-left:20px;
+}
