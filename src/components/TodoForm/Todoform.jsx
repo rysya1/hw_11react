@@ -1,6 +1,7 @@
-import { useReducer} from 'react'
+import { useContext, useReducer } from 'react'
 import Modal from '../UI/Modal'
 import './TodoForm.css'
+import AuthContext from '../../store/auth-context'
 const titleReducer = (state, action) => {
 	if (action.type === 'USER_INPUT') {
 		return {
@@ -48,11 +49,12 @@ const dateReducer = (state, action) => {
 	}
 	return {
 		value: '',
-		isValid:null,
+		isValid: null,
 	}
 }
 ///------------
 function Todoform(props) {
+	const ctxData = useContext(AuthContext)
 	const [titleState, dispatchTitle] = useReducer(titleReducer, {
 		value: '',
 		isValid: null,
@@ -81,19 +83,23 @@ function Todoform(props) {
 			dispatchTitle({ type: 'INPUT_BLUR' })
 			return
 		}
-		props.onAddUser(titleState.value, dateState.value)
-		
+		ctxData.addUserNandler(titleState.value, dateState.value)
 	}
 	const ErrorHandler = () => {
-		dispatchTitle({type : 'INPUT_OK'})
-		dispatchDate({type : 'INPUT_OK'})
+		dispatchTitle({ type: 'INPUT_OK' })
+		dispatchDate({ type: 'INPUT_OK' })
 	}
 	return (
-		<div className='container'>				
-		<h1 className='todo'>Todo... <img src="https://orig13.deviantart.net/a372/f/2015/230/7/0/jake_dancing_gif_by_blue_staple_studios-d953i0n.gif" alt="" /></h1>
+		<div className='container'>
+			<h1 className='todo'>
+				Todo...{' '}
+				<img
+					src='https://orig13.deviantart.net/a372/f/2015/230/7/0/jake_dancing_gif_by_blue_staple_studios-d953i0n.gif'
+					alt=''
+				/>
+			</h1>
 
-			{titleState.isValid && <Modal onConfirm={ErrorHandler} 
-			/>}
+			{titleState.isValid && <Modal onConfirm={ErrorHandler} />}
 			<form className='frm' onSubmit={submitHandler}>
 				<input
 					className='titleCl'
@@ -108,8 +114,10 @@ function Todoform(props) {
 					value={dateState.value}
 					onChange={dateHandler}
 				/>
-				<div >
-					<button className='button' type='submit'>Add <span></span></button>
+				<div>
+					<button className='button' type='submit'>
+						Add <span></span>
+					</button>
 				</div>
 			</form>
 		</div>
